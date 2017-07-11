@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Widget Edit</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-1">
+                <div class="navbar-header">
+                    <a href="../widget/widget-list.html" class="navbar-brand">
+                              <span class="glyphicon glyphicon-chevron-left">
+                              </span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-9">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        Widget Editor
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-28">
+                <a href="../widget/widget-list.html" class="navbar-brand pull-right">
+                              <span class="glyphicon glyphicon-ok">
+                              </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <label for="name">Name </label>
+    <input id="name"
+           class="form-control"
+           value="blogger"/>
+    <label for="text">Text </label>
+    <input id="text"
+           class="form-control"
+           value="text"/>
+    <label for="url">URL </label>
+    <input id="url"
+           class="form-control"/>
+    <label for="width">Width </label>
+    <input id="width"
+           class="form-control"
+           value="100%"/>
+    <a href="widget-list.html" class="btn btn-block btn-danger">Delete</a>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="row navbar-text">
+            <div class="col-xs-3 text-center pull-right">
+                <a href="../user/profile.html">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+</body>
+</html>
