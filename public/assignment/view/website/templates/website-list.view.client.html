@@ -1,0 +1,74 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-1">
+                <div class="navbar-header">
+                    <a href="#!/user/{{model.userId}}/website" class="navbar-brand">
+                              <span class="glyphicon glyphicon-chevron-left">
+                              </span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        Website
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-8">
+                <a href="#!/user/{{model.userId}}/website/new" class="navbar-brand pull-right">
+                              <span class="glyphicon glyphicon-plus">
+                              </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+
+    <ul class="list-group">
+
+        <li class="list-group-item active">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 col-xs-11">Website Name </div>
+            <div class="col-lg-3 visible-lg">Created</div>
+            <div class="col-md-3 hidden-sm hidden-xs">Updated</div>
+                <div class="col-xs-1">
+                    <a href="#!/user/{{model.userId}}/website/new">
+                        <span class="glyphicon glyphicon-plus pull-right"></span>
+                    </a>
+                </div>
+            </div>
+        </li>
+
+        <li class="list-group-item" ng-repeat="website in model.websites">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 col-xs-11"><a href="../../page/page-list.html">{{website.name}}</a> </div>
+                <div class="col-lg-3 visible-lg">{{website.created | date}}</div>
+                <div class="col-md-3 hidden-sm hidden-xs">{{website.accessed | date}}</div>
+                <div class="col-xs-1">
+                    <a href="#!/user/{{model.userId}}/website/{{website._id}}">
+                        <span class="glyphicon glyphicon-cog pull-right"></span>
+                    </a>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="../user/profile.html" class="navbar-brand pull-right">
+                              <span class="glyphicon glyphicon-user">
+                              </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
