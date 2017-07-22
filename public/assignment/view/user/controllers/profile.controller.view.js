@@ -10,6 +10,5 @@
         model.userId= $routeParams['userId'];
         model.user= userService.findUserById(model.userId);
 
-
     }
 })();

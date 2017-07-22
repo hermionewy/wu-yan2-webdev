@@ -47,6 +47,11 @@
                 templateUrl: 'view/widget/templates/widget-list.view.client.html',
                 controller: 'widgetListController',
                 controllerAs: 'model'
+            })
+            .when('/user/:userId/website/:websiteId/page',{
+                templateUrl: 'view/page/templates/page-list.view.client.html',
+                controller: 'pageListController',
+                controllerAs: 'model'
             });
     }
 

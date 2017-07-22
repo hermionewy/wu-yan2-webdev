@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-xs-1">
                 <div class="navbar-header">
-                    <a href="website-list.html" class="navbar-brand">
+                    <a href="#!/user/{{model.userId}}/website" class="navbar-brand">
                               <span class="glyphicon glyphicon-chevron-left">
                               </span>
                     </a>
@@ -14,7 +14,7 @@
                     <a class="navbar-brand" href="#">
                         Website
                     </a>
-                    <a href="website-new.html" class="navbar-brand pull-right">
+                    <a href="#" class="navbar-brand pull-right">
                       <span class="glyphicon glyphicon-plus">
                       </span>
                     </a>
@@ -28,7 +28,9 @@
                 </div>
             </div>
             <div class="col-xs-1">
-                <a href="website-list.html" class="navbar-brand pull-right">
+                <a ng-click="model.createWebsite(website)"
+                   href="#!/user/{{model.userId}}/website"
+                   class="navbar-brand pull-right">
                               <span class="glyphicon glyphicon-ok">
                               </span>
                 </a>
@@ -43,56 +45,19 @@
             <ul class="list-group">
                 <li class="list-group-item active">
                     <div class="row">
-                        <div class="col-md-5 col-sm-10">Website Name </div>
-                        <div class="col-md-3 visible-lg">Created</div>
-                        <div class="col-md-3 hidden-sm">Updated</div>
-                        <div class="col-xs-1">   </div>
+                        <div class="col-lg-6 col-xs-11">Website Name </div>
+                        <div class="col-lg-5 visible-lg">Created</div>
+                        <div class="col-xs-1">
+                        </div>
                     </div>
                 </li>
 
-                <li class="list-group-item">
+                <li class="list-group-item" ng-repeat="website in model.websites">
                     <div class="row">
-                        <div class="col-lg-5 col-md-6 col-sm-10"><a href="../../page/page-list.html">Blogging App</a> </div>
-                    <div class="col-lg-3 visible-lg">1/1/2017</div>
-                    <div class="col-md-3 hidden-sm">2/2/2017</div>
-                    <div class="col-sm-1">
-                        <a href="website-edit.html">
-                            <span class="glyphicon glyphicon-cog pull-right"></span>
-                        </a>
-                    </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-6 col-sm-10"><a href="../../page/page-list.html">Address Book App</a> </div>
-                        <div class="col-lg-3 visible-lg">1/1/2017</div>
-                        <div class="col-md-3 hidden-sm">2/2/2017</div>
-                        <div class="col-sm-1">
-                            <a href="website-edit.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-6 col-sm-10"><a href="../../page/page-list.html">Script Testing App</a> </div>
-                        <div class="col-lg-3 visible-lg">1/1/2017</div>
-                        <div class="col-md-3 hidden-sm">2/2/2017</div>
-                        <div class="col-sm-1">
-                            <a href="website-edit.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-6 col-sm-10"><a href="../../page/page-list.html">Blogger</a> </div>
-                        <div class="col-lg-3 visible-lg">1/1/2017</div>
-                        <div class="col-md-3 hidden-sm">2/2/2017</div>
-                        <div class="col-sm-1">
-                            <a href="website-edit.html">
+                        <div class="col-lg-6 col-xs-11"><a href="../../page/page-list.html">{{website.name}}</a> </div>
+                        <div class="col-lg-5 visible-lg">{{website.created | date}}</div>
+                        <div class="col-xs-1">
+                            <a href="#!/user/{{model.userId}}/website/{{website._id}}">
                                 <span class="glyphicon glyphicon-cog pull-right"></span>
                             </a>
                         </div>
@@ -122,7 +87,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12">
-                <a href="../user/profile.html" class="navbar-brand pull-right">
+                <a href="#!/user/{{model.userId}}" class="navbar-brand pull-right">
                               <span class="glyphicon glyphicon-user">
                               </span>
                 </a>

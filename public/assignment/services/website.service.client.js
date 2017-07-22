@@ -6,7 +6,6 @@
         .service("websiteService", websiteService);
 
     function websiteService() {
-
         this.findAllWebsitesForUser = findAllWebsitesForUser;
         this.findWebsiteById = findWebsiteById;
         this.updateWebsite = updateWebsite;
@@ -22,6 +21,7 @@
             { "_id": "789", "name": "Chess",       "developerId": "234", "description": "Lorem" }
         ];
         function createWebsite(website) {
+            website.developerId=model.userId;
             website._id= (new Date()).getTime()+'';
             websites.push(website);
         }
