@@ -7,11 +7,10 @@
 
     function websiteNewController($routeParams, $location, websiteService) {
         var model = this;
-        model.userId = $routeParams['userId'];
-        model.createWebsite = createWebsite;
 
         function init() {
-
+            model.userId = $routeParams['userId'];
+            model.createWebsite = createWebsite;
             model.websites = websiteService.findAllWebsitesForUser(model.userId);
         }
         init();

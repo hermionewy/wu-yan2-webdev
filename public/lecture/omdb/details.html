@@ -1,0 +1,13 @@
+<h1>OMDB API</h1>
+<input type="text"
+       ng-model="movieTitle"
+       placeholder="movie"/>
+<button ng-click="model.searchMovieByTitle(movieTitle)"></button>
+<div>{{model.movies}}</div>
+
+<table class="table">
+    <tr ng-repeat="movie in model.movies">
+        <td>{{movie.Title}}</td>
+        <td><img ng-src=""/></td>
+    </tr>
+</table>

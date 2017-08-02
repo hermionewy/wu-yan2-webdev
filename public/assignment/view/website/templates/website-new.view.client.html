@@ -54,7 +54,7 @@
 
                 <li class="list-group-item" ng-repeat="website in model.websites">
                     <div class="row">
-                        <div class="col-lg-6 col-xs-11"><a href="../../page/page-list.html">{{website.name}}</a> </div>
+                        <div class="col-lg-6 col-xs-11"><a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">{{website.name}}</a> </div>
                         <div class="col-lg-5 visible-lg">{{website.created | date}}</div>
                         <div class="col-xs-1">
                             <a href="#!/user/{{model.userId}}/website/{{website._id}}">
@@ -77,7 +77,6 @@
                       ng-model="website.description"
                       rows="6">Placeholders</textarea>
             <a ng-click="model.createWebsite(website)"
-               href="#!/user/{{model.userId}}/website"
                     class="btn btn-block btn-success">Create</a>
         </div>
     </div>

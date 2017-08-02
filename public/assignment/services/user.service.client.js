@@ -5,7 +5,7 @@
     angular.module('WAM')
         .factory('userService', userService);
     
-    function userService() {
+    function userService($http) {
         var users=
             [
                 {_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
@@ -18,45 +18,74 @@
             findUserById: findUserById,
             findUserByCredentials: findUserByCredentials,
             findUserByUsername:findUserByUsername,
-            createUser:createUser
+            createUser:createUser,
+            updateUser: updateUser,
+            deleteUser: deleteUser
         };
 
         return api;
-        
+        function deleteUser(userId) {
+            var url="/api/assignment/user/"+ userId;
+            return $http.delete(url)
+                .then(renderUser);
+            function renderUser(response) {
+                return response.data;
+            }
+        }
+        function updateUser(userId, user) {
+            var url="/api/assignment/user/"+ userId;
+            return $http.put(url, user)
+                .then(renderUser);
+            function renderUser(response) {
+                return response.data;
+            }
+        }
         function createUser(user) {
-            user._id=(new Date()).getTime()+'';
-            user.created = new Date();
-            users.push(user);
-            return user;
+            var url="/api/assignment/user";
+            return $http.post(url, user)
+                .then(function (response) {
+                    console.log(response.data);
+                    return response.data;
+                });
+            // user._id=(new Date()).getTime()+'';
+            // user.created = new Date();
+            // users.push(user);
+            // return user;
         }
         
         function findUserByUsername(username) {
-            var user = users.find(function (user) {
-                return user.username === username;
-            });
-            if(typeof user ==='undefined'){
-                return null;
-            }
-            return user;
+            var url="/api/assignment/user?username="+ username;
+            return $http.get(url)
+                .then(function (response) {
+                    return response.data;
+                });
+            // var user = users.find(function (user) {
+            //     return user.username === username;
+            // });
+            // if(typeof user ==='undefined'){
+            //     return null;
+            // }
+            // return user;
         }
 
         function findUserById(userId) {
-            for(var u in users){
-                if(users[u]._id===userId){
-                    return users[u];
-                }
+            var url="/api/assignment/user/"+ userId;
+            return $http.get(url)
+                .then(renderUser);
+
+            function renderUser(response) {
+                return response.data;
             }
-            return null;
+            // return null;
         }
 
         function findUserByCredentials(username, password) {
-            for(var u in users){
-                var user= users[u];
-                if(user.username === username && user.password === password){
-                    return user;
-                }
-            }
-            return null;
+            var url="/api/assignment/user?username="+ username+"&password="+password;
+            return $http.get(url)
+                .then(function (response) {
+                    return response.data;
+                });
+
         }
     }
 })();

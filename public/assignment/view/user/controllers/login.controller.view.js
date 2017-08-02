@@ -11,15 +11,17 @@
         model.login= login; //event handler
 
             function login(username, password) {
-
-            var found= userService.findUserByCredentials(username,password);
-
-            if(found != null){
-                model.message = "Welcome, "+username;
-                $location.url('/user/'+ found._id);
-            }else {
-                model.message = "Sorry, "+username + " not found!";
-            }
+            //var found= userService.findUserByCredentials(username,password);
+            userService
+                .findUserByCredentials(username,password)
+                .then(function (found) {
+                    if(found != null){
+                        model.message = "Welcome, "+username;
+                        $location.url('/user/'+ found._id);
+                    }else {
+                        model.message = "Sorry, "+username + " not found!";
+                    }
+                });
         }
 
     }

@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Page Edit</title>
-    <link href="../../../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../../../css/style.css" rel="stylesheet"/>
-</head>
-<body>
-
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-1">
                 <div class="navbar-header">
-                    <a href="page-new.view.client.html" class="navbar-brand">
+                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/new" class="navbar-brand">
                               <span class="glyphicon glyphicon-chevron-left">
                               </span>
                     </a>
@@ -24,7 +14,7 @@
                     <a class="navbar-brand" href="#">
                         Page
                     </a>
-                    <a href="page-new.view.client.html" class="navbar-brand pull-right">
+                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/new" class="navbar-brand pull-right">
                       <span class="glyphicon glyphicon-plus">
                       </span>
                     </a>
@@ -60,61 +50,13 @@
                     </div>
                 </li>
 
-                <li class="list-group-item">
+                <li ng-repeat="page in model.pages" class="list-group-item">
                     <div class="row">
-                        <div class="col-lg-5 col-md-6 col-sm-10"><a href="page-list.view.client.html">Blog Posts</a> </div>
+                        <div class="col-lg-5 col-md-6 col-sm-10"><a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">Blog Posts</a> </div>
                         <div class="col-lg-3 visible-lg">1/1/2017</div>
                         <div class="col-md-3 hidden-sm">2/2/2017</div>
                         <div class="col-sm-1">
-                            <a href="page-edit.view.client.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-6 col-sm-10"><a href="page-list.view.client.html">Blogs</a> </div>
-                        <div class="col-lg-3 visible-lg">1/1/2017</div>
-                        <div class="col-md-3 hidden-sm">2/2/2017</div>
-                        <div class="col-sm-1">
-                            <a href="page-edit.view.client.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-6 col-sm-10"><a href="page-list.view.client.html">Home</a> </div>
-                        <div class="col-lg-3 visible-lg">1/1/2017</div>
-                        <div class="col-md-3 hidden-sm">2/2/2017</div>
-                        <div class="col-sm-1">
-                            <a href="page-edit.view.client.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-6 col-sm-10"><a href="page-list.view.client.html">About</a> </div>
-                        <div class="col-lg-3 visible-lg">1/1/2017</div>
-                        <div class="col-md-3 hidden-sm">2/2/2017</div>
-                        <div class="col-sm-1">
-                            <a href="page-edit.view.client.html">
-                                <span class="glyphicon glyphicon-cog pull-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-6 col-sm-10"><a href="page-list.view.client.html">Contact Us</a> </div>
-                        <div class="col-lg-3 visible-lg">1/1/2017</div>
-                        <div class="col-md-3 hidden-sm">2/2/2017</div>
-                        <div class="col-sm-1">
-                            <a href="page-edit.view.client.html">
+                            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
                                 <span class="glyphicon glyphicon-cog pull-right"></span>
                             </a>
                         </div>
@@ -131,7 +73,7 @@
             <textarea id="description"
                       class="form-control"
                       rows="6">Placeholders</textarea>
-            <a href="page-list.view.client.html" class="btn btn-block btn-danger">Delete</a>
+            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page" class="btn btn-block btn-danger">Delete</a>
         </div>
     </div>
 </div>
@@ -140,7 +82,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12">
-                <a href="../user/profile.html" class="navbar-brand pull-right">
+                <a href="#!/user/{{model.userId}}" class="navbar-brand pull-right">
                               <span class="glyphicon glyphicon-user">
                               </span>
                 </a>
@@ -148,6 +90,3 @@
         </div>
     </div>
 </nav>
-
-</body>
-</html>

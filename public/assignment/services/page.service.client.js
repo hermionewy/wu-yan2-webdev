@@ -28,8 +28,7 @@
                 { "_id": "546", "name": "Post 5", "websiteId": "567", "description": "Lorem" },
                 { "_id": "547", "name": "Post 6", "websiteId": "123", "description": "Lorem" }
             ];
-        function createPage(websiteId, page) {
-            page.websiteId= websiteId;
+        function createPage(page) {
             page._id= (new Date()).getTime()+'';
             pages.push(page);
         }

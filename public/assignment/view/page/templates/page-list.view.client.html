@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="col-xs-8">
-                <a href="page-new.view.client.html" class="navbar-brand pull-right">
+                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/new" class="navbar-brand pull-right">
                               <span class="glyphicon glyphicon-plus">
                               </span>
                 </a>
@@ -41,11 +41,11 @@
 
         <li class="list-group-item" ng-repeat="page in model.pages">
             <div class="row">
-                <div class="col-lg-3 col-sm-6 col-xs-9"><a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._Id}}/widget">Blog Post</a> </div>
+                <div class="col-lg-3 col-sm-6 col-xs-9"><a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}/widget">Blog Post</a> </div>
                 <div class="col-lg-3 visible-lg">1/1/2017</div>
                 <div class="col-sm-3 hidden-xs">2/2/2017</div>
                 <div class="col-xs-2">
-                    <a href="page-edit.view.client.html">
+                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
                         <span class="glyphicon glyphicon-cog pull-right"></span>
                     </a>
                 </div>
@@ -59,12 +59,12 @@
     <div class="container">
         <div class="row navbar-text">
             <div class="col-xs-3 text-center">
-                <a href="../website/website-list.html">
+                <a href="#!/user/{{model.userId}}/website">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
             </div>
             <div class="col-xs-3 text-center">
-                <a href="../user/profile.html">
+                <a href="#!/user/{{model.userId}}">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
